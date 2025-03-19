@@ -22,7 +22,7 @@ flowchart TD
     newLine8[/error handling/]
     stop ((**End**))
     
-    markdown --> newLine1--> newLine2 --> newLine3 --> newLine4 --> newLine5 --> newLine6 --> newLine7 --> newLine8 --> stop
+    markdown --> newLine1--> newLine2 --> newLine3 --> newLine4 --> flowchart LR --> newLine5 --> newLine6 --> newLine7 --> newLine8 --> stop
 
 
 ```
