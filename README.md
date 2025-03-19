@@ -9,11 +9,11 @@ command: npx prisma db push
 
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart TD
-    markdown["`The CRUD **Features** _Flow Diagram_`"]
-    newLine1["`Create New User`"]
-    newLine2["`Display list of all users`"]
-    newLine3["`Edit existing Users`"]
-    newLine4["`Delete Users`"]
+    markdown["` **Start** _Flow Diagram_`"]
+    newLine1[/Create New User/]
+    newLine2[/Display list of all users/]
+    newLine3[/Edit existing Users/]
+    newLine4[/Delete Users/]
     newLine5["`Server-side data validation`"]
     newLine6["`Loading states for action`"]
     newLine7["`Optimistic UI`"]
