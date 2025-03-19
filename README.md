@@ -8,17 +8,18 @@ command: npx prisma db push
 ```mermaid
 
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
-flowchart LR
+flowchart TD
     markdown["`The CRUD **Features** _Flow Diagram_`"]
-    newLines["`Create New User
-    Display list of all users
-    Edit existing Users
-    Delete Users
-    Server-side data validation
-    Optimistic UI
-    Loading states for action
-    error handling`"]
-    markdown --> newLines
+    newLine1["`Create New User`"]
+    newLine2["`Display list of all users`"]
+    newLine3["`Edit existing Users`"]
+    newLine4["`Delete Users`"]
+    newLine5["`Server-side data validation`"]
+    newLine6["`Loading states for action`"]
+    newLine7["`Optimistic UI`"]
+    newLine8["`error handling`"]
+    
+    markdown --> newLine1--> newLine2 --> newLine3 --> newLine4 --> newLine5 --> newLine6 --> newLine7 --> newLine8
 
 
 ```
