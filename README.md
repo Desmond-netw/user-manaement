@@ -14,12 +14,15 @@ flowchart TD
     newLine2[/Display list of all users/]
     newLine3[/Edit existing Users/]
     newLine4[/Delete Users/]
-    newLine5["`Server-side data validation`"]
-    newLine6["`Loading states for action`"]
-    newLine7["`Optimistic UI`"]
-    newLine8["`error handling`"]
+    flowchart LR
+        newLine5[/Server-side data validation/]
+        newLine6[/Loading states for action/]
     
-    markdown --> newLine1--> newLine2 --> newLine3 --> newLine4 --> newLine5 --> newLine6 --> newLine7 --> newLine8
+    newLine7[/Optimistic UI/]
+    newLine8[/error handling/]
+    stop ((**End**))
+    
+    markdown --> newLine1--> newLine2 --> newLine3 --> newLine4 --> newLine5 --> newLine6 --> newLine7 --> newLine8 --> stop
 
 
 ```
