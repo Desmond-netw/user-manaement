@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
+import { useForm } from "react-hook-form";
 import { createUser } from "@/app/actions/users";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -20,13 +21,15 @@ function SubmitButton() {
 }
 
 export default function Userform() {
-  
+  const form = useForm();
+  const {register, handlSubmit, formState} = form ;
+  const {erros} = formState
 
    
 
     return (
         <div className="py-5 px-8 max-w-3xl mx-auto bg-slate-600">
-            <form action={createUser} className="space-y-7">
+            <form action={handlSubmit(createUser)} className="space-y-7">
                 <div>
                     <label htmlFor="name" className="block mb-1">
                         Name:
@@ -38,7 +41,11 @@ export default function Userform() {
                         required
                         className="border p-2 rounded w-full"
                         autoComplete="on"
+                        {...register("name", {
+                            required:{value:true, message:"Name is required"}
+                        })}
                     />
+                    <p className="text-red-400">{erros.name?.message}</p>
                 </div>
 
                 <div>
@@ -52,6 +59,12 @@ export default function Userform() {
                         required
                         className="border p-2 rounded w-full"
                         autoComplete="on"
+                        {...register("email", {
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: "Email is not valid"
+                            }
+                        })}
                     />
                 </div>
 
