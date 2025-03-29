@@ -69,11 +69,15 @@ export default function UserListItem({ user }) {
 
     return (
         <li className='p-4 bg-gray-100 rounded flex justify-between items-center shadow-md'>
-            <div>
+            {/* --------------- list user data from database */}
+            <div className='flex flex-col'>
                 <span className="font-bold text-gray-800">{user.name}</span> <br />
                 <span className="text-gray-600">{user.email}</span>
+                <span className='font-extralight text-gray-600'> Account Created:
+                    {user.createdAt ? new Date(user.createdAt).toLocaleDateString() : "no date"}
+                </span>
             </div>
-
+                {/* ---------- actions buttons */}
             <div className='space-x-2'>
                 <button
                     onClick={() => setIsEditing(true)}

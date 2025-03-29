@@ -22,14 +22,15 @@ function SubmitButton() {
 
 export default function Userform() {
   const form = useForm();
-  const {register, handlSubmit, formState} = form ;
-  const {erros} = formState
+  const {register, formState} = form ;
+  const {errors} = formState
 
+  
    
 
     return (
         <div className="py-5 px-8 max-w-3xl mx-auto bg-slate-600">
-            <form action={handlSubmit(createUser)} className="space-y-7">
+            <form action={createUser} className="space-y-7">
                 <div>
                     <label htmlFor="name" className="block mb-1">
                         Name:
@@ -38,14 +39,13 @@ export default function Userform() {
                         type="text"
                         id="name"
                         name="name"
-                        required
                         className="border p-2 rounded w-full"
                         autoComplete="on"
                         {...register("name", {
                             required:{value:true, message:"Name is required"}
                         })}
                     />
-                    <p className="text-red-400">{erros.name?.message}</p>
+                    <p className="text-red-400">{errors.name?.message}</p>
                 </div>
 
                 <div>
@@ -56,7 +56,6 @@ export default function Userform() {
                         type="email"
                         id="email"
                         name="email"
-                        required
                         className="border p-2 rounded w-full"
                         autoComplete="on"
                         {...register("email", {
@@ -66,6 +65,7 @@ export default function Userform() {
                             }
                         })}
                     />
+                    <p className="text-red-400">{errors.email?.message}</p>
                 </div>
 
                 <SubmitButton />
